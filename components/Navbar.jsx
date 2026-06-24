@@ -74,18 +74,19 @@ export default function Navbar() {
             )}
           </button>
         ))}
-        <button onClick={() => scrollTo('Contact')} style={{
-          background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
-          border: 'none', color: 'white', cursor: 'pointer',
-          padding: '8px 20px', borderRadius: '8px',
-          fontSize: '14px', fontWeight: 600,
-          letterSpacing: '0.02em',
-          boxShadow: '0 0 20px rgba(59,130,246,0.3)',
-          transition: 'all 0.3s ease',
-          fontFamily: 'var(--font-space)',
-        }}>
-          Hire Me
-        </button>
+        <a href="/resume.pdf" download="Sneha_KV_Resume.pdf" style={{
+  background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
+  color: 'white', cursor: 'pointer',
+  padding: '8px 20px', borderRadius: '8px',
+  fontSize: '14px', fontWeight: 600,
+  letterSpacing: '0.02em',
+  boxShadow: '0 0 20px rgba(59,130,246,0.3)',
+  transition: 'all 0.3s ease',
+  fontFamily: 'var(--font-space)',
+  textDecoration: 'none',
+}}>
+  Resume
+</a>
       </div>
 
       {/* Mobile hamburger */}

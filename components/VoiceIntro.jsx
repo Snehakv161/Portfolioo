@@ -16,34 +16,35 @@ export default function VoiceIntro() {
         "Welcome to my portfolio."
       ]
 
-      const getVoice = () => {
-        const voices = window.speechSynthesis.getVoices()
-        return voices.find(v =>
-          v.lang.startsWith('en') && v.name.toLowerCase().includes('female')
-        ) || voices.find(v => v.lang.startsWith('en') && v.name.includes('Samantha'))
-          || voices.find(v => v.lang.startsWith('en'))
-          || voices[0]
-      }
+      const voices = window.speechSynthesis.getVoices()
+      
+      const femaleVoice = 
+        voices.find(v => v.name === 'Microsoft Zira - English (United States)') ||
+        voices.find(v => v.name === 'Samantha') ||
+        voices.find(v => v.name.includes('Female')) ||
+        voices.find(v => v.name.includes('Zira')) ||
+        voices.find(v => v.name.includes('Susan')) ||
+        voices.find(v => v.lang.startsWith('en') && v.name.includes('f')) ||
+        voices.find(v => v.lang.startsWith('en'))
 
       let i = 0
       const sayNext = () => {
         if (i >= lines.length) return
         const utter = new SpeechSynthesisUtterance(lines[i])
-        utter.voice = getVoice()
-        utter.pitch = 1.1
-        utter.rate = 0.92
-        utter.volume = 0.85
+        utter.voice = femaleVoice
+        utter.pitch = 1.4
+        utter.rate = 0.9
+        utter.volume = 1
         utter.onend = () => { i++; sayNext() }
         window.speechSynthesis.speak(utter)
         i++
       }
 
-      window.speechSynthesis.onvoiceschanged = sayNext
-      if (window.speechSynthesis.getVoices().length > 0) sayNext()
+      sayNext()
       sessionStorage.setItem('voice_played', '1')
     }
 
-    const timer = setTimeout(speak, 800)
+    const timer = setTimeout(speak, 1000)
     return () => clearTimeout(timer)
   }, [])
 

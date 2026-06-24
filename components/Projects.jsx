@@ -42,6 +42,16 @@ const projects = [
     icon: '🥽',
     features: ['Interactive VR', 'Hardware exploration', 'Unity Engine', '3D Experience'],
   },
+  {
+    title: 'JobFlow',
+    description: 'A web application to track job applications and upcoming opportunities with status tracking, search and filter functionality, and dashboard analytics.',
+    tech: ['React', 'TypeScript', 'Tailwind CSS'],
+    gradient: 'linear-gradient(135deg, #134e4a, #0f766e, #0d9488)',
+    github: 'https://github.com/Snehakv161',
+    demo: null,
+    icon: '💼',
+    features: ['Status Tracking', 'Search & Filter', 'Dashboard Analytics', 'Responsive UI'],
+},
 ]
 
 export default function Projects() {

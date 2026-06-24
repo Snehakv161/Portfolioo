@@ -5,7 +5,7 @@ const certs = [
   {
     title: 'Python for Data Science',
     issuer: 'NPTEL',
-    icon: '🐍',
+    icon: '📊',
     color: '#1d4ed8',
     gradient: 'linear-gradient(135deg, #1e3a8a, #2563eb)',
   },
